@@ -5,6 +5,10 @@ import hashlib
 import os
 import shutil
 import subprocess
+import sys
+
+if sys.version[0] == '2':
+    input = raw_input
 
 mapping = {
     'gitconfig': '~/.gitconfig',
