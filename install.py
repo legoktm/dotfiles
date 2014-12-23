@@ -12,12 +12,12 @@ import sys
 if sys.version[0] == '2':
     input = raw_input
 
-mapping = OrderedDict(
+mapping = OrderedDict([
     ('gitconfig', '~/.gitconfig'),
     ('gitignore_global', '~/.gitignore_global'),
     ('bash_profile', '~/.bash_profile'),
     ('{os}/bash_profile', '~/.bash_profile_os'),
-)
+])
 
 
 def format_vars():
