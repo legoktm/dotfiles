@@ -50,6 +50,10 @@ def process_file(name, dest):
         print('%s does not exist, skipping' % name)
         return
     dest = os.path.expanduser(dest)
+    if not os.path.exists(dest):
+        print('Installing %s' % dest)
+        shutil.copy(name, dest)
+        return
     if get_hash(name) != get_hash(dest):
         print(dest)
         subprocess.call(['diff', dest, name, '-N'])
