@@ -17,6 +17,7 @@ mapping = OrderedDict([
     ('gitignore_global', '~/.gitignore_global'),
     ('bash_profile', '~/.bash_profile'),
     ('{os}/bash_profile', '~/.bash_profile_os'),
+    ('ssh_config', '~/.ssh/config'),
 ])
 
 
