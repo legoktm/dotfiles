@@ -1,3 +1,4 @@
+# MANAGED BY DOTFILES
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/share/python
 export NODE_PATH=/usr/lib/local/node:/usr/local/lib/node_modules
 export PYWIKBOT2_DIR=/Users/km/projects/rewrite
