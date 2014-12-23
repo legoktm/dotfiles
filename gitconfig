@@ -1,0 +1,12 @@
+# MANAGED BY DOTFILES
+[user]
+	email = legoktm@gmail.com
+	name = Kunal Mehta
+	signingkey = EDB7FCA2
+[gitreview]
+	username = legoktm
+[core]
+	excludesfile = /home/km/.gitignore_global
+
+[push]
+	default = simple

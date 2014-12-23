@@ -1,0 +1,12 @@
+# MANAGED BY DOTFILES
+*~
+.DS_Store
+*.pyc
+.project
+.pydevproject
+.settings
+.idea
+*.egg-info
+*.sublime-project
+*.sublime-workspace
+.tox
