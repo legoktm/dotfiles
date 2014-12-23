@@ -18,6 +18,7 @@ mapping = OrderedDict([
     ('bash_profile', '~/.bash_profile'),
     ('{os}/bash_profile', '~/.bash_profile_os'),
     ('ssh_config', '~/.ssh/config'),
+    ('pastebinit.xml', '~/.pastebinit.xml'),
 ])
 
 
