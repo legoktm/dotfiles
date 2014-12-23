@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import print_function
 
+from collections import OrderedDict
 import hashlib
 import os
 import platform
@@ -11,12 +12,12 @@ import sys
 if sys.version[0] == '2':
     input = raw_input
 
-mapping = {
-    'gitconfig': '~/.gitconfig',
-    'gitignore_global': '~/.gitignore_global',
-    'bash_profile': '~/.bash_profile',
-    '{os}/bash_profile': '~/.bash_profile_os'
-}
+mapping = OrderedDict(
+    ('gitconfig', '~/.gitconfig'),
+    ('gitignore_global', '~/.gitignore_global'),
+    ('bash_profile', '~/.bash_profile'),
+    ('{os}/bash_profile', '~/.bash_profile_os'),
+)
 
 
 def format_vars():
