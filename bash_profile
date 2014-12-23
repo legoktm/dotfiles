@@ -27,3 +27,7 @@ _pip_completion()
 }
 complete -o default -F _pip_completion pip
 # pip bash completion end
+
+if [ -f ~/.bash_profile_os ]; then
+    . ~/.bash_profile_os
+fi

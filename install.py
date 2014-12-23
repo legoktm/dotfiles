@@ -3,6 +3,7 @@ from __future__ import print_function
 
 import hashlib
 import os
+import platform
 import shutil
 import subprocess
 import sys
@@ -13,8 +14,22 @@ if sys.version[0] == '2':
 mapping = {
     'gitconfig': '~/.gitconfig',
     'gitignore_global': '~/.gitignore_global',
-    'bash_profile': '~/.bash_profile'
+    'bash_profile': '~/.bash_profile',
+    '{os}/bash_profile': '~/.bash_profile_os'
 }
+
+
+def format_vars():
+    vars = {
+        'host': platform.node(),
+        'system': platform.system()
+    }
+    if vars['system'] == 'Darwin':
+        vars['os'] = 'osx'
+    elif vars['system'] == 'Linux':
+        vars['os'] = platform.dist()[0]
+
+    return vars
 
 
 def get_hash(path):
@@ -29,6 +44,10 @@ def ask(question):
 
 
 def process_file(name, dest):
+    name = name.format(**format_vars())
+    if not os.path.exists(name):
+        print('%s does not exist, skipping' % name)
+        return
     dest = os.path.expanduser(dest)
     if get_hash(name) != get_hash(dest):
         print(dest)
