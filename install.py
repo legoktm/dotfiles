@@ -13,6 +13,7 @@ if sys.version[0] == '2':
     input = raw_input
 
 mapping = OrderedDict([
+    ('ackrc', '~/.ackrc'),
     ('gitconfig', '~/.gitconfig'),
     ('gitignore_global', '~/.gitignore_global'),
     ('bash_profile', '~/.bash_profile'),
