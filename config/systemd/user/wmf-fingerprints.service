@@ -1,0 +1,5 @@
+[Unit]
+Description=sync SSH fingerprints automatically
+
+[Service]
+ExecStart=curl "https://config-master.wikimedia.org/known_hosts.ecdsa" -o "%h/.ssh/known_hosts.d/wmf-prod"

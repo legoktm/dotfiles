@@ -1,0 +1,83 @@
+Host contint.wikimedia.org
+    HostName contint2001.wikimedia.org
+
+## Production & External Zones
+Host bast1002.wikimedia.org bast2002.wikimedia.org bast3004.wikimedia.org bast4002.wikimedia.org bast5001.wikimedia.org restricted.bastion.wmflabs.org
+#    StrictHostKeyChecking yes
+    ProxyCommand none
+    ControlMaster auto
+#    IdentitiesOnly yes
+
+# See https://wikitech.wikimedia.org/wiki/Managing_multiple_SSH_agents#Using_multiple_agents_via_systemd for setting up multiple agents using systemd
+Host *.wikimedia.org !gerrit.wikimedia.org !git-ssh.wikimedia.org
+    User legoktm
+    StrictHostKeyChecking yes
+#    IdentitiesOnly yes
+    IdentityAgent /run/user/1000/gnupg/S.gpg-agent.ssh
+    UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-prod
+    ProxyCommand ssh -a -W %h:%p bast1002.wikimedia.org
+
+## Internal Zones
+Host *.mgmt.eqiad.wmnet *.mgmt.codfw.wmnet *.mgmt.ulsfo.wmnet *.mgmt.esams.wmnet *.mgmt.eqsin.wmnet
+    User root
+    StrictHostKeyChecking no
+
+# See https://wikitech.wikimedia.org/wiki/Managing_multiple_SSH_agents#Using_multiple_agents_via_systemd for setting up multiple agents using systemd
+Host *.wmnet
+    User legoktm
+    StrictHostKeyChecking yes
+#    IdentitiesOnly yes
+    IdentityAgent /run/user/1000/gnupg/S.gpg-agent.ssh
+    UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-prod
+
+Host *.eqiad.wmnet
+    ProxyCommand ssh -a -W %h:%p bast1002.wikimedia.org
+
+Host *.codfw.wmnet
+    ProxyCommand ssh -a -W %h:%p bast2002.wikimedia.org
+
+Host *.esams.wmnet
+    ProxyCommand ssh -a -W %h:%p bast3004.wikimedia.org
+
+Host *.ulsfo.wmnet
+    ProxyCommand ssh -a -W %h:%p bast4002.wikimedia.org
+
+Host *.eqsin.wmnet
+    ProxyCommand ssh -a -W %h:%p bast5001.wikimedia.org
+
+## Networking Equipment
+Host *-eqiad.wikimedia.org *-eqord.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast1002.wikimedia.org
+
+Host *-codfw.wikimedia.org *-eqdfw.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast2002.wikimedia.org
+
+Host *-esams.wikimedia.org *-knams.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast3004.wikimedia.org
+
+Host *-ulsfo.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast4002.wikimedia.org
+
+Host *-eqsin.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast5001.wikimedia.org
+
+## Gerrit and Cloud VPS
+# See https://wikitech.wikimedia.org/wiki/Managing_multiple_SSH_agents#Using_multiple_agents_via_systemd for setting up multiple agents using systemd
+Host gerrit.wikimedia.org
+    User legoktm
+    Port 29418
+    StrictHostKeyChecking yes
+    ProxyCommand none
+    IdentitiesOnly yes
+    IdentityAgent /run/user/1000/ssh-wmf-cloud.socket
+    IdentityFile ~/.ssh/id_wmf_cloud
+ #   UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-cloud
+
+# See https://wikitech.wikimedia.org/wiki/Managing_multiple_SSH_agents#Using_multiple_agents_via_systemd for setting up multiple agents using systemd
+Host *.wmflabs.org *.wmflabs *.wikimedia.cloud
+    User legoktm
+    IdentityFile ~/.ssh/id_wmf_cloud
+    IdentityAgent /run/user/1000/ssh-wmf-cloud.socket
+    StrictHostKeyChecking no
+    UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-cloud
+    ProxyCommand ssh -a -W %h:%p restricted.bastion.wmflabs.org

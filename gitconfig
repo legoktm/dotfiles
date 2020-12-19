@@ -1,12 +1,24 @@
-# MANAGED BY DOTFILES
 [user]
-	email = legoktm@gmail.com
+	email = legoktm@member.fsf.org
 	name = Kunal Mehta
-	signingkey = EDB7FCA2
+	signingkey = FA1E9F9A41E7F43502CA5D6352FC8E7BEDB7FCA2
+[submodule]
+	fetchJobs = 2
+[url "ssh://gerrit.wikimedia.org/"]
+	insteadOf = https://gerrit.wikimedia.org/r/
+[url "ssh://gerrit.wikimedia.org/"]
+	insteadOf = gerrit:
 [gitreview]
-	username = legoktm
+	remote = origin
+[cola]
+	spellcheck = false
 [core]
 	excludesfile = ~/.gitignore_global
-
-[push]
-	default = simple
+[help]
+	autocorrect = 20
+[protocol]
+	version = 2
+[advice]
+	detachedHead = false
+[pull]
+	ff = only

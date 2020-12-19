@@ -1,0 +1,5 @@
+sign-tag = true
+pre-release-commit-message = "Release {{version}}"
+post-release-commit-message = "Start development on {{next_version}}"
+tag-message = "Release {{Version}}"
+dev-version-ext = "pre"
