@@ -12,6 +12,7 @@
 	remote = origin
 [cola]
 	spellcheck = false
+	theme = flat-light-grey
 [core]
 	excludesfile = ~/.gitignore_global
 [help]
