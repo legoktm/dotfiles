@@ -15,6 +15,7 @@
 	theme = flat-light-grey
 [core]
 	excludesfile = ~/.gitignore_global
+	attributesfile = /home/km/.gitattributes_global
 [help]
 	autocorrect = 20
 [protocol]
@@ -23,3 +24,5 @@
 	detachedHead = false
 [pull]
 	ff = only
+[diff "exif"]
+	textconv = exiftool
