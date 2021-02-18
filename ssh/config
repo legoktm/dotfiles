@@ -27,6 +27,7 @@ Host *.wmnet
     User legoktm
     StrictHostKeyChecking yes
 #    IdentitiesOnly yes
+    PubkeyAcceptedKeyTypes +ssh-rsa
     IdentityAgent /run/user/1000/gnupg/S.gpg-agent.ssh
     UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-prod
 
