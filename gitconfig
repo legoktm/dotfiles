@@ -26,3 +26,5 @@
 	ff = only
 [diff "exif"]
 	textconv = exiftool
+[alias]
+	authors = "!git shortlog -s | sort -nr"
