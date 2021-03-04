@@ -21,6 +21,7 @@ Host *.wikimedia.org !gerrit.wikimedia.org !git-ssh.wikimedia.org
 Host *.mgmt.eqiad.wmnet *.mgmt.codfw.wmnet *.mgmt.ulsfo.wmnet *.mgmt.esams.wmnet *.mgmt.eqsin.wmnet
     User root
     StrictHostKeyChecking no
+    KexAlgorithms +diffie-hellman-group1-sha1
 
 # See https://wikitech.wikimedia.org/wiki/Managing_multiple_SSH_agents#Using_multiple_agents_via_systemd for setting up multiple agents using systemd
 Host *.wmnet
