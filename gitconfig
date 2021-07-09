@@ -3,7 +3,7 @@
 	name = Kunal Mehta
 	signingkey = FA1E9F9A41E7F43502CA5D6352FC8E7BEDB7FCA2
 [submodule]
-	fetchJobs = 2
+	fetchJobs = 3
 [url "ssh://gerrit.wikimedia.org/"]
 	insteadOf = https://gerrit.wikimedia.org/r/
 [url "ssh://gerrit.wikimedia.org/"]
@@ -28,3 +28,5 @@
 	textconv = exiftool
 [alias]
 	authors = "!git shortlog -s | sort -nr"
+[init]
+	defaultBranch = master

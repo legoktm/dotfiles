@@ -2,7 +2,7 @@ Host contint.wikimedia.org
     HostName contint2001.wikimedia.org
 
 ## Production & External Zones
-Host bast1002.wikimedia.org bast2002.wikimedia.org bast3005.wikimedia.org bast4003.wikimedia.org bast5002.wikimedia.org restricted.bastion.wmflabs.org
+Host bast1003.wikimedia.org bast2002.wikimedia.org bast3005.wikimedia.org bast4003.wikimedia.org bast5002.wikimedia.org restricted.bastion.wmflabs.org
 #    StrictHostKeyChecking yes
     ProxyCommand none
     ControlMaster auto
@@ -15,7 +15,7 @@ Host *.wikimedia.org !gerrit.wikimedia.org !git-ssh.wikimedia.org
 #    IdentitiesOnly yes
     IdentityAgent /run/user/1000/gnupg/S.gpg-agent.ssh
     UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-prod
-    ProxyCommand ssh -a -W %h:%p bast1002.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast1003.wikimedia.org
 
 ## Internal Zones
 Host *.mgmt.eqiad.wmnet *.mgmt.codfw.wmnet *.mgmt.ulsfo.wmnet *.mgmt.esams.wmnet *.mgmt.eqsin.wmnet
@@ -33,7 +33,7 @@ Host *.wmnet
     UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-prod
 
 Host *.eqiad.wmnet
-    ProxyCommand ssh -a -W %h:%p bast1002.wikimedia.org
+    ProxyCommand ssh -a -W %h:%p bast1003.wikimedia.org
 
 Host *.codfw.wmnet
     ProxyCommand ssh -a -W %h:%p bast2002.wikimedia.org
