@@ -1,1 +1,1 @@
---ignore-dir=.tox
+--ignore-dir=.tox --ignore-dir=target --ignore-dir=.eggs
