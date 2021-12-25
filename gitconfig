@@ -30,3 +30,5 @@
 	authors = "!git shortlog -s | sort -nr"
 [init]
 	defaultBranch = master
+[mailmap]
+	file = /home/km/gerrit/mediawiki/core/.mailmap
