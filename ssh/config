@@ -85,3 +85,15 @@ Host *.wmflabs.org *.wmflabs *.wikimedia.cloud
     StrictHostKeyChecking no
     UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-cloud
     ProxyCommand ssh -a -W %h:%p restricted.bastion.wmflabs.org
+
+Host tor.legoktm.com
+    HostName 104.131.72.61
+
+Host *.musicbrainz.org *.metabrainz.org
+    IdentityFile ~/.ssh/id__mb
+
+Host whiskey.he.net
+    User quix604
+
+Host 0xacab.org
+    IdentityFile ~/.ssh/id_0xacab
