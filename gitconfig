@@ -32,3 +32,5 @@
 	defaultBranch = master
 [mailmap]
 	file = /home/km/gerrit/mediawiki/core/.mailmap
+[gpg]
+	program = qubes-gpg-client-wrapper
