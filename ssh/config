@@ -73,15 +73,15 @@ Host gerrit.wikimedia.org
     StrictHostKeyChecking yes
     ProxyCommand none
     IdentitiesOnly yes
-    IdentityAgent /run/user/1000/ssh-wmf-cloud.socket
-    IdentityFile ~/.ssh/id_wmf_cloud
+ #   IdentityAgent /run/user/1000/ssh-wmf-cloud.socket
+ #   IdentityFile ~/.ssh/id_wmf_cloud
  #   UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-cloud
 
 # See https://wikitech.wikimedia.org/wiki/Managing_multiple_SSH_agents#Using_multiple_agents_via_systemd for setting up multiple agents using systemd
 Host *.wmflabs.org *.wmflabs *.wikimedia.cloud
     User legoktm
-    IdentityFile ~/.ssh/id_wmf_cloud
-    IdentityAgent /run/user/1000/ssh-wmf-cloud.socket
+#    IdentityFile ~/.ssh/id_wmf_cloud
+#    IdentityAgent /run/user/1000/ssh-wmf-cloud.socket
     StrictHostKeyChecking no
     UserKnownHostsFile ~/.ssh/known_hosts.d/wmf-cloud
     ProxyCommand ssh -a -W %h:%p restricted.bastion.wmflabs.org
