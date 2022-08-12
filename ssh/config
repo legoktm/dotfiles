@@ -97,3 +97,6 @@ Host whiskey.he.net
 
 Host 0xacab.org
     IdentityFile ~/.ssh/id_0xacab
+
+Host *.freedom.press
+    User kunal
