@@ -1,6 +1,5 @@
 #sign-tag = true
 pre-release-commit-message = "Release {{version}}"
-post-release-commit-message = "Start development on {{next_version}}"
 tag-message = "Release {{version}}"
-dev-version-ext = "pre"
 tag-name = "{{version}}"
+consolidate-commits = false

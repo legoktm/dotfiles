@@ -29,8 +29,10 @@
 [alias]
 	authors = "!git shortlog -s | sort -nr"
 	sign = "commit --amend -S"
+	mr = !sh -c 'git fetch origin merge-requests/$1/head:mr-$1 && git checkout mr-$1' -
+	cleanup = "!git branch --merged $1 | grep  -v $1 | xargs -n 1 -r git branch -d"
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [mailmap]
 	file = /home/km/gerrit/mediawiki/core/.mailmap
 [gpg]
@@ -40,3 +42,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[merge "dpkg-mergechangelogs"]
+	name = debian/changelog merge driver
+	driver = dpkg-mergechangelogs -m %O %A %B %A
+[credential]
+	helper = store
