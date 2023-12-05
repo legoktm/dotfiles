@@ -10,3 +10,7 @@ set -x USE_PODMAN 1
 set -x FPF_USERNAME legoktm
 set -x SOPS_USERNAME legoktm
 set -x SOPS_GPG_EXEC "qubes-gpg-client-wrapper"
+set -x SEMGREP_SEND_METRICS off
+
+abbr -a -- prp 'poetry run python'
+abbr -a -- rgrs 'rg --type=rust'
